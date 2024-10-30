@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Avancé</title>
+    <link rel="stylesheet" href="profil_avance.css">
+</head>
+<body>
+    <h1>Aymane NAMOUS</h1>
+    <section>
+        <h2>À propos de moi</h2>
+        <p>Je suis un étudiant passionné par le développement web, la programmation et l'apprentissage de nouvelles technologies.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet felis rutrum erat semper pulvinar. Donec nec semper nulla. Phasellus fringilla, purus eget mattis maximus, purus metus posuere sapien, ut lobortis odio purus quis ex. Aliquam erat volutpat. Curabitur eleifend purus vel orci sagittis, a euismod lorem elementum.</p>
+        <img src="image_profil.png" alt="description de l'image" width="100" height="100">   
+    </section>
+    <section>
+        <h2>Hobbies et Objectifs</h2>
+        <h4>Mes hobbies</h4>
+        <ul>
+            <li>Voyager</li>
+            <li>Basketball</li>
+            <li>Musique</li>
+        </ul>
+        <h4>Mes objectifs</h4>
+        <ol>
+            <li>Déveloper mes connaissances</li>
+            <li>Apprendre de nouvelles choses</li>
+            <li>Participer à un projet open-source</li>
+        </ol>
+    </section>
+    <section>
+        <table border="1">
+            <tr>
+                <th>Nom</th>
+                <th>Âge</th>
+                <th>Ville</th>
+                <th>Lien vers profil</th>
+                <tr>
+                    <td>Zakaria</td>
+                    <td>22 ans</td>
+                    <td>Casablanca</td>
+                    <td><a href="https://www.google.com/">Accès au profil</a></td>
+                </tr>
+                <tr>
+                    <td>Yassine</td>
+                    <td>21 ans</td>
+                    <td>Casablanca</td>
+                    <td><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Accès au profil</a></td>
+                </tr>
+                <tr>
+                    <td>Ilyas</td>
+                    <td>20 ans</td>
+                    <td>Rabat</td>
+                    <td><a href="https://www.google.com/">Accès au profil</a></td>
+                </tr>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Formulaire de contact</h2>
+        <form>
+            <label for="nom">Nom :</label><br>
+            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom" required>
+            <br><br>
+            <label for="email">E-mail :</label><br>
+            <input type="email" name="email" id="email" placeholder="Entrez votre email" required>
+            <br><br>
+            <label for="message">Message :</label><br>
+            <textarea name="message" id="message" cols="30" rows="3" placeholder="Inscrivez votre message ici"></textarea>
+            <br><br>
+            <button type="submit" onclick="return envoiForm()">Soumettre</button>
+        </form>
+    </section>
+
+    <script>
+        function envoiForm() {
+            var nom = document.getElementById("nom").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+           
+            if (nom == "" || email == "") {
+                alert("Veuillez remplir tous les champs !");
+                return false;
+            }
+
+            var format = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!format.test(email)) {
+                alert("Veuillez saisir un email valide !");
+                return false;
+            }
+
+            if (message == "") {
+                alert("Veuillez saisir un message !");
+                return false;
+            }
+
+            alert("Formulaire envoyé avec succès !");
+            return true;
+        }
+    </script>
+
+</body>
+</html> 
